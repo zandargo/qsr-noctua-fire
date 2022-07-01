@@ -1,10 +1,10 @@
 {
-  "name": "quasar-electron-template",
+  "name": "sixem-noctua-fire",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar Desktop App Template",
+  "description": "Noctua Study Manager",
+  "productName": "Quasar Study App Helper",
   "author": "Madson Germano <madson.br@gmail.com>",
-  "private": true,
+  "private": false,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0"
   },

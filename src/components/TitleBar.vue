@@ -10,7 +10,7 @@
 			</q-avatar>
 
 			<q-space />
-			<div><h4>Electron App</h4></div>
+			<div><h4>Noctua Fire</h4></div>
 			<q-space />
 
 			<q-btn

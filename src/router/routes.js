@@ -12,6 +12,14 @@ const routes = [
 					main: () => import("pages/IndexPage.vue"),
 				},
 			},
+      {
+				name: "auth",
+				path: "auth",
+				components: {
+					main: () => import("pages/AuthPage.vue"),
+				},
+			},
+
 			{
 				name: "Page1",
 				path: "page1",
@@ -41,6 +49,7 @@ const routes = [
 			},
     ]
   },
+
 
   // Always leave this as last one,
   // but you can also remove it

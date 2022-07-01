@@ -1,4 +1,10 @@
 import { defineStore } from 'pinia';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth"
 
 export const useAppStore = defineStore('app', {
   state: () => ({

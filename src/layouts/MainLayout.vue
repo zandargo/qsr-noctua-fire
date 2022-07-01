@@ -6,7 +6,8 @@
       <TitleBar />
 
       <!-- //*  MOBILE BAR  *// -->
-      <div v-if="!$q.platform.is.electron" class="col">
+      <!-- <div v-if="$q.platform.is.electron" class="col"> -->
+      <div class="col">
         <q-toolbar>
           <q-btn
             flat
@@ -18,17 +19,23 @@
           />
 
           <q-toolbar-title>
-            Quasar App
           </q-toolbar-title>
 
-          <div>Quasar v{{ $q.version }}</div>
+          <q-btn
+            flat
+            dense
+            round
+            icon="person"
+            aria-label="User"
+            @click="toggleRightDrawer"
+          />
         </q-toolbar>
       </div>
       <!-- //*  TABS & RIBBON  *// -->
-      <div class="col bg-l3 txt-d3">
+      <!-- <div class="col bg-l3 txt-d3">
         <TabsBar />
         <Ribbon />
-      </div>
+      </div> -->
 
     </q-header>
 <!-- //* ------------------------ DRAWER ------------------------ *// -->
@@ -41,68 +48,51 @@
       style="overflow: hidden; min-height: 100%"
     >
     </q-drawer>
+    <q-drawer
+      v-model="rightDrawerOpen"
+      side="right"
+      elevated
+      behavior="desktop"
+      class="bg-l5 txt-d5 absolute-right q-pa-md shadow-2"
+      style="overflow: hidden; min-height: 100%"
+    >
+    </q-drawer>
 
+<!-- //* ------------------------ MAIN ------------------------ *// -->
     <q-page-container>
-      <router-view />
+      <router-view name="main"/>
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup>
-import { defineComponent, ref } from 'vue'
+import { defineComponent, onMounted, ref } from 'vue'
 // import EssentialLink from 'components/EssentialLink.vue'
 import TitleBar from 'components/TitleBar.vue'
 import TabsBar from 'components/TabsBar.vue'
 import Ribbon from 'components/Ribbon.vue'
-
-// const essentialLinks = [
-//   {
-//     title: 'Docs',
-//     caption: 'quasar.dev',
-//     icon: 'school',
-//     link: 'https://quasar.dev'
-//   },
-//   {
-//     title: 'Github',
-//     caption: 'github.com/quasarframework',
-//     icon: 'code',
-//     link: 'https://github.com/quasarframework'
-//   },
-//   {
-//     title: 'Discord Chat Channel',
-//     caption: 'chat.quasar.dev',
-//     icon: 'chat',
-//     link: 'https://chat.quasar.dev'
-//   },
-//   {
-//     title: 'Forum',
-//     caption: 'forum.quasar.dev',
-//     icon: 'record_voice_over',
-//     link: 'https://forum.quasar.dev'
-//   },
-//   {
-//     title: 'Twitter',
-//     caption: '@quasarframework',
-//     icon: 'rss_feed',
-//     link: 'https://twitter.quasar.dev'
-//   },
-//   {
-//     title: 'Facebook',
-//     caption: '@QuasarFramework',
-//     icon: 'public',
-//     link: 'https://facebook.quasar.dev'
-//   },
-//   {
-//     title: 'Quasar Awesome',
-//     caption: 'Community Quasar projects',
-//     icon: 'favorite',
-//     link: 'https://awesome.quasar.dev'
-//   }
-// ]
+import { useStoreAuth } from 'stores/storeAuth'
 
 const leftDrawerOpen = ref(true)
 const toggleLeftDrawer = () => {
-  leftDrawerOpen.value = !leftDrawerOpen.value
+  if (storeAuth.user.id) {
+    leftDrawerOpen.value = !leftDrawerOpen.value
+  }
 }
+const rightDrawerOpen = ref(true)
+const toggleRightDrawer = () => {
+  if (storeAuth.user.id) {
+    rightDrawerOpen.value = !rightDrawerOpen.value
+  }
+}
+
+const storeAuth = useStoreAuth()
+
+onMounted(() => {
+  if (!storeAuth.user.id) {
+    leftDrawerOpen.value = false
+    rightDrawerOpen.value = false
+  }
+})
 
 </script>
