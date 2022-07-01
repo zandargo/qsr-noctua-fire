@@ -22,6 +22,7 @@ export const useStoreAuth = defineStore('storeAuth', {
           this.user.id = user.uid
           this.user.email = user.email
           this.router.push('/')
+          // this.router.push({name: 'index'})
           //! storeNotes.init()
         } else {
           this.user = {}
@@ -33,6 +34,10 @@ export const useStoreAuth = defineStore('storeAuth', {
     registerUser(credentials) {
       createUserWithEmailAndPassword(auth, credentials.email, credentials.password).then((userCredential) => {
         const user = userCredential.user
+        this.user = {
+          id: user.uid,
+          email: user.email
+        }
       }).catch((error) => {
         console.log('error.message: ', error.message)
       })
@@ -40,6 +45,10 @@ export const useStoreAuth = defineStore('storeAuth', {
     loginUser(credentials) {
       signInWithEmailAndPassword(auth, credentials.email, credentials.password).then((userCredential) => {
         const user = userCredential.user
+        this.user = {
+          id: user.uid,
+          email: user.email
+        }
       }).catch((error) => {
         console.log('error.message: ', error.message)
       })
