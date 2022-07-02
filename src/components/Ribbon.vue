@@ -5,9 +5,9 @@
 </template>
 
 <script setup>
-import { useAppStore } from 'src/stores/storeApp'
+import { useStoreApp } from 'src/stores/storeApp'
 
-const storeApp = useAppStore()
+const storeApp = useStoreApp()
 
 
 </script>

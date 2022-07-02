@@ -25,6 +25,7 @@
                 v-model="password"
                 type="password"
                 label="Senha"
+                @keypress.enter="doLogin()"
               />
               <!-- //> BUTTON LOG IN -->
               <div class="full-width q-pt-md flex flex-center">
@@ -82,6 +83,7 @@
                 v-model="password2"
                 type="password"
                 label="Repita a senha"
+                @keyup.enter="doRegister()"
               >
                 <template v-if="password2 !== ''" v-slot:append class="q-mb-none">
                   <q-icon

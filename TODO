@@ -1,0 +1,34 @@
+Main page:
+  ☐ Scroll Area (w/ top offset)
+
+Firebase:
+  ✔ Create user collection when register @done(22-07-02 15:43)
+  ✔ Add fields do user document @done(22-07-02 15:44)
+  ☐ Notify if e-mail is already registered
+    Failed to load resource: the server responded with a status of 400 ()
+  ☐ Verify: auth state change deleting pinia user info
+  ☐ Notify if user is disabled
+  ☐ Notify if incorrect e-mail/password
+
+Right drawer:
+  ☐ Welcome info
+
+Left drawer:
+  ☐ Create section component
+
+
+
+MENU:
+  ☐ Ciclo de estudos
+  ☐ Matérias
+  Estatísticas:
+    ☐ Gerais
+    ☐ Por matéria
+  Calendário:
+    ☐ Qtd horas estudo p/ dia
+    ☐ Datas importantes?
+    ☐ Notificações
+  ☐ Dicas de estudo
+  ☐ Motivação
+  ☐ Registros
+  ☐ Suporte

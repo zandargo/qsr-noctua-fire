@@ -5,8 +5,10 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useStoreAuth } from 'stores/storeAuth'
+import { useStoreApp } from 'stores/storeApp'
 
 const storeAuth = useStoreAuth()
+const storeApp = useStoreApp()
 onMounted(() => {
   storeAuth.init()
 })

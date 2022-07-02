@@ -15,7 +15,7 @@
             round
             icon="menu"
             aria-label="Menu"
-            @click="toggleLeftDrawer"
+            @click="storeApp.actLeftDrawer('toggle')"
           />
 
           <q-toolbar-title>
@@ -27,7 +27,7 @@
             round
             icon="person"
             aria-label="User"
-            @click="toggleRightDrawer"
+            @click="storeApp.actRightDrawer('toggle')"
           />
         </q-toolbar>
       </div>
@@ -40,22 +40,26 @@
     </q-header>
 <!-- //* ------------------------ DRAWER ------------------------ *// -->
     <q-drawer
-      v-model="leftDrawerOpen"
-      side="left"
       elevated
+      persistent
+      v-model="storeApp.leftDrawerOpen"
+      side="left"
       behavior="desktop"
-      class="bg-l5 txt-d5 absolute-left q-pa-md shadow-2"
+      class="bg-l5 q-pa-none shadow-2"
       style="overflow: hidden; min-height: 100%"
     >
+      <LeftDrawer />
     </q-drawer>
     <q-drawer
-      v-model="rightDrawerOpen"
-      side="right"
       elevated
+      persistent
+      v-model="storeApp.rightDrawerOpen"
+      side="right"
       behavior="desktop"
-      class="bg-l5 txt-d5 absolute-right q-pa-md shadow-2"
+      class="bg-l5 q-pa-none shadow-2"
       style="overflow: hidden; min-height: 100%"
     >
+      <RightDrawer />
     </q-drawer>
 
 <!-- //* ------------------------ MAIN ------------------------ *// -->
@@ -66,33 +70,44 @@
 </template>
 
 <script setup>
-import { defineComponent, onMounted, ref } from 'vue'
+import { computed, onMounted, onBeforeUpdate, ref } from 'vue'
 // import EssentialLink from 'components/EssentialLink.vue'
 import TitleBar from 'components/TitleBar.vue'
 import TabsBar from 'components/TabsBar.vue'
 import Ribbon from 'components/Ribbon.vue'
+import LeftDrawer from 'pages/DrawerLeft.vue'
+import RightDrawer from 'pages/DrawerRight.vue'
 import { useStoreAuth } from 'stores/storeAuth'
-
-const leftDrawerOpen = ref(true)
-const toggleLeftDrawer = () => {
-  if (storeAuth.user.id) {
-    leftDrawerOpen.value = !leftDrawerOpen.value
-  }
-}
-const rightDrawerOpen = ref(true)
-const toggleRightDrawer = () => {
-  if (storeAuth.user.id) {
-    rightDrawerOpen.value = !rightDrawerOpen.value
-  }
-}
+import { useStoreApp } from 'stores/storeApp'
 
 const storeAuth = useStoreAuth()
+const storeApp = useStoreApp()
 
-onMounted(() => {
-  if (!storeAuth.user.id) {
-    leftDrawerOpen.value = false
-    rightDrawerOpen.value = false
-  }
-})
+// const leftDrawerOpen = ref(true)
+// const toggleLeftDrawer = () => {
+//   if (storeAuth.user.id) {
+//     leftDrawerOpen.value = !leftDrawerOpen.value
+//   }
+// }
+// const rightDrawerOpen = ref(true)
+// const toggleRightDrawer = () => {
+//   if (storeAuth.user.id) {
+//     rightDrawerOpen.value = !rightDrawerOpen.value
+//   }
+// }
+
+
+// onMounted(() => {
+//   if (!storeAuth.user.id) {
+//     leftDrawerOpen.value = false
+//     rightDrawerOpen.value = false
+//   }
+// })
+// onBeforeUpdate(() => {
+//   if (!storeAuth.user.id) {
+//     leftDrawerOpen.value = false
+//     rightDrawerOpen.value = false
+//   }
+// })
 
 </script>
