@@ -8,7 +8,7 @@
     <q-separator />
 
     <div class="col-grow q-pa-md">
-      <p>teste 2</p>
+      <p>Estatísticas Gerais</p>
     </div>
 
     <!-- <div class="col-2 q-px-md q-pt-sm q-pb-lg"> -->

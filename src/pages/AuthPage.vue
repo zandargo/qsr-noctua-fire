@@ -4,7 +4,7 @@
       <q-card bordered class="absolute-center bg-white shadow-7">
         <q-card-section class="text-center">
           <q-icon name="shutter_speed" size="64px" class="text-primary" />
-          <div class="text-h3 q-pt-md">Bem vindo ao NOCTUA FIRE</div>
+          <div class="text-h3 q-pt-md">Bem vindo ao NOCTUA</div>
           <!-- <div class="text-subtitle2 text-center">by Sixem</div> -->
         </q-card-section>
 
