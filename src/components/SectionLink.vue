@@ -7,8 +7,9 @@
       v-if="icon"
       avatar
       class="q-px-none"
+      style="36px"
     >
-      <q-icon :name="icon" />
+      <q-icon :name="icon" size="32px" />
     </q-item-section>
 
     <q-item-section>

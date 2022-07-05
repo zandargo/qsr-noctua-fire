@@ -21,12 +21,12 @@ const routes = [
 			},
 
 			{
-				name: "Page1",
-				path: "page1",
+				name: "Subjects",
+				path: "subj",
 				components: {
-					main: () => import("pages/Page1/main.vue"),
-					sidebar: () => import("pages/Page1/sidebar.vue"),
-					ribbon: () => import("pages/Page1/ribbon.vue"),
+					main: () => import("pages/SubjectPage.vue"),
+					// sidebar: () => import("pages/Page1/sidebar.vue"),
+					// ribbon: () => import("pages/Page1/ribbon.vue"),
 				},
 			},
 			{

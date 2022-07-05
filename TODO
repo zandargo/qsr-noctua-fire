@@ -1,12 +1,13 @@
 Main page:
   ☐ Scroll Area (w/ top offset)
+  ☐ Start Auth Pagea apprearing when already legged in
 
 Firebase:
   ✔ Create user collection when register @done(22-07-02 15:43)
   ✔ Add fields do user document @done(22-07-02 15:44)
   ☐ Notify if e-mail is already registered
     Failed to load resource: the server responded with a status of 400 ()
-  ☐ Verify: auth state change deleting pinia user info
+  ✔ Verify: auth state change deleting pinia user info @done(22-07-03 17:11)
   ☐ Notify if user is disabled
   ☐ Notify if incorrect e-mail/password
 
@@ -14,7 +15,7 @@ Right drawer:
   ☐ Welcome info
 
 Left drawer:
-  ☐ Create section component
+  ✔ Create section component @done(22-07-03 17:11)
 
 
 
