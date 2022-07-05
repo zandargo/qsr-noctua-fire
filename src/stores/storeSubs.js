@@ -1,9 +1,19 @@
 import { defineStore } from 'pinia'
 
-export const useStoreData = defineStore('storeData', {
+export const useStoreSubs = defineStore('storeSubs', {
   state: () => {
     return {
-      data: [],
+      list: [
+        {
+          title: 'Português',
+        },
+        {
+          title: 'Matemática',
+        },
+        {
+          title: 'Informática',
+        },
+      ],
     }
   },
   actions: {

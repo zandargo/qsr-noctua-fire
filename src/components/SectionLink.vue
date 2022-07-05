@@ -45,7 +45,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-.pet-caps {
-  font-variant: small-caps !important;
-}
+
 </style>

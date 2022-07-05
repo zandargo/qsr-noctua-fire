@@ -96,6 +96,10 @@
 	border: 1px solid transparentize($primary, 0.4);
 }
 
+.pet-caps {
+  font-variant: small-caps !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-variant-caps: small-caps;
 }
