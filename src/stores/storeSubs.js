@@ -11,6 +11,27 @@ export const useStoreSubs = defineStore('storeSubs', {
           title: 'Matemática',
         },
         {
+          title: 'Estatística',
+        },
+        {
+          title: 'Informática',
+        },
+        {
+          title: 'Informática',
+        },
+        {
+          title: 'Informática',
+        },
+        {
+          title: 'Informática',
+        },
+        {
+          title: 'Informática',
+        },
+        {
+          title: 'Informática',
+        },
+        {
           title: 'Informática',
         },
       ],

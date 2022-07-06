@@ -1,6 +1,6 @@
 Main page:
-  ☐ Scroll Area (w/ top offset)
-  ☐ Start Auth Pagea apprearing when already legged in
+  ✔ Scroll Area (w/ top offset) @done(22-07-05 22:59)
+  ☐ Start Auth Pagea apprearing when already logged in
 
 Firebase:
   ✔ Create user collection when register @done(22-07-02 15:43)

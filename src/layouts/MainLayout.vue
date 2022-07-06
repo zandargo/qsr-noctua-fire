@@ -63,9 +63,20 @@
     </q-drawer>
 
 <!-- //* ------------------------ MAIN ------------------------ *// -->
-    <q-page-container>
+    <!-- <q-page-container>
       <router-view name="main"/>
-    </q-page-container>
+    </q-page-container> -->
+    <q-page-container
+				class="bg-l5 q-mb-none row items-stretch window-height"
+			>
+				<q-scroll-area
+					:thumb-style="thumbStyle"
+					style="min-height: 300px; width: 100%"
+					class="q-py-none q-px-md q-ma-none"
+				>
+					<router-view name="main" class="q-pa-md" />
+				</q-scroll-area>
+			</q-page-container>
   </q-layout>
 </template>
 
@@ -83,31 +94,12 @@ import { useStoreApp } from 'stores/storeApp'
 const storeAuth = useStoreAuth()
 const storeApp = useStoreApp()
 
-// const leftDrawerOpen = ref(true)
-// const toggleLeftDrawer = () => {
-//   if (storeAuth.user.id) {
-//     leftDrawerOpen.value = !leftDrawerOpen.value
-//   }
-// }
-// const rightDrawerOpen = ref(true)
-// const toggleRightDrawer = () => {
-//   if (storeAuth.user.id) {
-//     rightDrawerOpen.value = !rightDrawerOpen.value
-//   }
-// }
-
-
-// onMounted(() => {
-//   if (!storeAuth.user.id) {
-//     leftDrawerOpen.value = false
-//     rightDrawerOpen.value = false
-//   }
-// })
-// onBeforeUpdate(() => {
-//   if (!storeAuth.user.id) {
-//     leftDrawerOpen.value = false
-//     rightDrawerOpen.value = false
-//   }
-// })
+const thumbStyle = {
+  right: "4px",
+  borderRadius: "4px",
+  backgroundColor: "#607d8b",
+  width: "8px",
+  opacity: 0.5,
+}
 
 </script>
