@@ -12,6 +12,7 @@ export const useStoreApp = defineStore('storeApp', {
     tab: 'tab1',
     leftDrawerOpen: false,
     rightDrawerOpen: false,
+    subActivePalette: '',
   }),
   getters: {
     // doubleCount: (state) => state.counter * 2,

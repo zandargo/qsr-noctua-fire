@@ -69,6 +69,7 @@
     <q-page-container
 				class="bg-l5 q-mb-none row items-stretch window-height"
 			>
+					<!-- thumb-style="thumb-style" -->
 				<q-scroll-area
 					:thumb-style="thumbStyle"
 					style="min-height: 300px; width: 100%"
@@ -82,7 +83,7 @@
 
 <script setup>
 import { computed, onMounted, onBeforeUpdate, ref } from 'vue'
-// import EssentialLink from 'components/EssentialLink.vue'
+import { getCssVar } from 'quasar'
 import TitleBar from 'components/TitleBar.vue'
 import TabsBar from 'components/TabsBar.vue'
 import Ribbon from 'components/Ribbon.vue'
@@ -97,9 +98,13 @@ const storeApp = useStoreApp()
 const thumbStyle = {
   right: "4px",
   borderRadius: "4px",
-  backgroundColor: "#607d8b",
+  backgroundColor: getCssVar('primary'),
   width: "8px",
   opacity: 0.5,
 }
 
 </script>
+
+<style lang="scss" scoped>
+
+</style>

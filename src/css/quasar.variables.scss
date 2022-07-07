@@ -24,7 +24,7 @@
 // $warning   : #F2C037;
 
 
-$primary   : hsl(222, 69%, 50%);
+$primary   : hsl(218, 64%, 50%);
 $secondary : hsl(174, 100%, 29%);
 $accent    : hsl(291, 64%, 42%);
 $dark      : hsl(200, 19%, 18%);
@@ -32,6 +32,10 @@ $positive  : hsl(122, 39%, 49%);
 $negative  : hsl(0, 65%, 51%);
 $info      : hsl(187, 100%, 38%);
 $warning   : hsl(49, 98%, 60%);
+
+:export {
+  colorPrimary: $primary;
+}
 
 $dark-page : #121212;
 
