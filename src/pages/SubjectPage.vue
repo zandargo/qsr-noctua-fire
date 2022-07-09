@@ -4,6 +4,7 @@
       v-for="subject in storeSubs.list"
       :key="subject.title"
       v-bind="subject"
+      @updateColor="(value) => subject.color = value"
     />
   </div>
 </template>

@@ -34,6 +34,10 @@ export const useStoreSubs = defineStore('storeSubs', {
           title: 'Informática',
           color: '#333',
         },
+        {
+          title: 'Direito',
+          color: '#333',
+        },
 
       ],
     }
